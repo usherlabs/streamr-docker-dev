@@ -300,10 +300,10 @@ services:
         volume:
           nocopy: true
   parity-sidechain-node0:
-    container_name: streamr-dev-parity-sidechain-node0
+    container_name: logstore-dev-parity-sidechain-node0
     environment:
       CHAIN_ID: 0x2325
-    image: streamr/open-ethereum-poa-sidechain-preload1:dev
+    image: logstore/open-ethereum-poa-sidechain-preload1:dev
     networks:
       - streamr-network
     ports:
