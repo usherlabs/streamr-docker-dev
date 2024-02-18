@@ -360,7 +360,8 @@ services:
     networks:
       - streamr-network
     depends_on:
-      - graph-node
+      graph-node:
+        condition: service_healthy
     volumes:
       - type: volume
         source: data-graph-deploy-legacy
@@ -374,7 +375,8 @@ services:
     networks:
       - streamr-network
     depends_on:
-      - graph-node
+      graph-node:
+        condition: service_healthy
     volumes:
       - type: volume
         source: data-graph-deploy
@@ -388,7 +390,8 @@ services:
     networks:
       - streamr-network
     depends_on:
-      - graph-node
+      graph-node:
+        condition: service_healthy
     volumes:
       - type: volume
         source: data-deploy-hub-subgraph
@@ -402,7 +405,8 @@ services:
     networks:
       - streamr-network
     depends_on:
-      - graph-node
+      graph-node:
+        condition: service_healthy
     volumes:
       - type: volume
         source: data-graph-deploy-dataunion
@@ -416,7 +420,8 @@ services:
     networks:
       - streamr-network
     depends_on:
-      - graph-node
+      graph-node:
+        condition: service_healthy
     volumes:
       - type: volume
         source: data-graph-deploy-tatum
