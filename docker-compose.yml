@@ -170,7 +170,7 @@ services:
       retries: 20
   broker-node-storage-1:
     container_name: streamr-dev-broker-node-storage-1
-    image: streamr/broker-node:dev@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
+    image: streamr/broker-node@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
     init: true
     networks:
       - streamr-network
@@ -197,7 +197,7 @@ services:
       retries: 20
   broker-node-no-storage-1:
     container_name: streamr-dev-broker-node-no-storage-1
-    image: streamr/broker-node:dev@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
+    image: streamr/broker-node@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
     init: true
     networks:
       - streamr-network
@@ -221,7 +221,7 @@ services:
       retries: 20
   broker-node-no-storage-2:
     container_name: streamr-dev-broker-node-no-storage-2
-    image: streamr/broker-node:dev@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
+    image: streamr/broker-node@sha256:6f55db912e10d4ee6b8d1c82ab4101b0671c5e2714ed4bd90d03558fe156a904
     init: true
     networks:
       - streamr-network
@@ -476,7 +476,7 @@ services:
       retries: 10
   stream-metrics-index:
     container_name: streamr-dev-stream-metrics-index
-    image: streamr/stream-metrics-index:latest@sha256:70ff5305a153e8ed25c9a0c10be5edccd0bce16738cb6b2aa84330989e7d33df
+    image: streamr/stream-metrics-index@sha256:70ff5305a153e8ed25c9a0c10be5edccd0bce16738cb6b2aa84330989e7d33df
     networks:
       - streamr-network
     restart: unless-stopped
