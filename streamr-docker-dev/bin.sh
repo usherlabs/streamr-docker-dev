@@ -28,9 +28,8 @@ EXCEPT_SERVICES_DEFAULT=() # array of string e.g. ("a" "b")
 NODE_NO_STORAGE='broker-node-no-storage-1 broker-node-no-storage-2'
 NODE_STORAGE='broker-node-storage-1'
 NODES="$NODE_NO_STORAGE $NODE_STORAGE"
-TRACKERS='tracker-1 tracker-2 tracker-3'
 
-# swap aliases for full names e.g. trackers = tracker-1 tracker-2 tracker-3
+# swap aliases for full names (e.g. NODES -> broker-node-storage-1 broker-node-no-storage-1 broker-node-no-storage-2)
 # feel free to add more, just make sure you don't end up using actual service
 # names, or part-thereof as alias names
 expandServiceAliases() {
@@ -40,7 +39,6 @@ expandServiceAliases() {
     names="${names//storage-nodes/$NODE_STORAGE}"
     names="${names//brokers/$NODES}"
     names="${names//nodes/$NODES}" # brokers/nodes sort of interchangeable
-    names="${names//trackers/$TRACKERS}"
     echo "$names"
 }
 
@@ -223,7 +221,7 @@ update() {
 wipe() {
     stop
     COMMANDS_TO_RUN+=("echo Wiping persistent data of services")
-    COMMANDS_TO_RUN+=("docker volume prune -f")
+    COMMANDS_TO_RUN+=("docker volume prune --all --force")
 }
 
 factory-reset() {
